@@ -218,6 +218,8 @@
             
             // set the cell details text with attribute value
             rawValue = [data valueForKey:key];
+
+            // for NSArray and NSDictionary [cellDisplay] returns an empty string
             cell.detailTextLabel.text = [rawValue cellDisplay];
         } else if ([data isKindOfClass:[NSArray class]]) {
             rawValue = [self.data objectAtIndex:row];
@@ -280,7 +282,14 @@
          
         } else if ([data isKindOfClass:[NSArray class]]) {
             rawValue = [data objectAtIndex:row];
-            title = [rawValue cellDisplay];
+            
+            if ([rawValue isKindOfClass:[NSDictionary class]] ||    // if the value is a dictionary or an array the title is the row number
+                [rawValue isKindOfClass:[NSArray class]]) {
+                
+                title = [[NSNumber numberWithUnsignedInteger:row] stringValue];
+            } else {    // else show the primitive value
+                title = [rawValue cellDisplay];
+            }
         } 
     }
     
