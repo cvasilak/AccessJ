@@ -75,7 +75,7 @@
 	atabBarController.delegate = self;
 
     //TODO: find a better way
-    UIDeviceOrientation interfaceOrientation = [[UIDevice currentDevice] orientation];
+    UIInterfaceOrientation interfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
     if((interfaceOrientation == UIInterfaceOrientationLandscapeLeft)||
        (interfaceOrientation == UIInterfaceOrientationLandscapeRight)) {
       	atabBarController.view.frame = CGRectMake(0, 0, 320, 480);
