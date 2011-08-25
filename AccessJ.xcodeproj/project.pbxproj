@@ -13,6 +13,7 @@
 		6F0FD55D13D052B400D671F0 /* MBeanOperationExecController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F0FD55C13D052B300D671F0 /* MBeanOperationExecController.m */; };
 		6F1BB87B13FBD7D600B116A2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F1BB87A13FBD7D600B116A2 /* MapKit.framework */; };
 		6F1BB88413FBDCB500B116A2 /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F1BB88313FBDCB500B116A2 /* libz.1.2.3.dylib */; };
+		6F20EB5C1406AC66008C5701 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6F20EB5B1406AC66008C5701 /* README.md */; };
 		6F28987C13E17DFD00B4438D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F28987B13E17DFD00B4438D /* CoreGraphics.framework */; };
 		6F28987F13E17E7100B4438D /* MBeanAttributePlotController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F28987E13E17E7100B4438D /* MBeanAttributePlotController.m */; };
 		6F2E6AB613FF0D21004DD099 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F2E6AB513FF0D20004DD099 /* Default.png */; };
@@ -147,6 +148,7 @@
 		6F0FD55C13D052B300D671F0 /* MBeanOperationExecController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBeanOperationExecController.m; sourceTree = "<group>"; };
 		6F1BB87A13FBD7D600B116A2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		6F1BB88313FBDCB500B116A2 /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
+		6F20EB5B1406AC66008C5701 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		6F28987B13E17DFD00B4438D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6F28987D13E17E7100B4438D /* MBeanAttributePlotController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBeanAttributePlotController.h; sourceTree = "<group>"; };
 		6F28987E13E17E7100B4438D /* MBeanAttributePlotController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBeanAttributePlotController.m; sourceTree = "<group>"; };
@@ -657,6 +659,7 @@
 		6FBA631F13A7AB080043BE97 = {
 			isa = PBXGroup;
 			children = (
+				6F20EB5B1406AC66008C5701 /* README.md */,
 				6F2E6AB513FF0D20004DD099 /* Default.png */,
 				6F5C7A2813FDBE2F002A1491 /* Default@2x.png */,
 				6F90401E13FDB3460087611E /* accessj-114x114.png */,
@@ -853,6 +856,7 @@
 				6F7CB8051406686500592B50 /* folder.png in Resources */,
 				6F7CB809140672D000592B50 /* domain.png in Resources */,
 				6FAEAB221406A06500AB47C1 /* TapkuLibrary.bundle in Resources */,
+				6F20EB5C1406AC66008C5701 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
