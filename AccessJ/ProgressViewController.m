@@ -34,7 +34,7 @@
 
 - (void)adjustOrientation {
     // TODO: find a better way seems a hack
-    UIDeviceOrientation interfaceOrientation = [[UIDevice currentDevice] orientation];
+    UIInterfaceOrientation interfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
     
     CGRect newFrame;
     
