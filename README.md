@@ -1,4 +1,3 @@
 AccessJ
 
-AccessJ is a an iPhone fromt end to Java Management Extensions (JMX)
-
+AccessJ is an iPhone front-end to Java Management Extensions (JMX).
