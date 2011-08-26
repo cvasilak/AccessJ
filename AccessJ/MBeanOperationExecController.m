@@ -226,8 +226,12 @@
 
             
         } else { //  else handle primitive response
+            
+            // if the operation is void the returned value is 
+            // null according to the jolokia protocol, so display
+            // an empty string not to confuse users
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success!"
-                                                            message:[value cellDisplay]
+                                                            message:([[op valueForKey:@"ret"] isEqualToString:@"void"]? @"":[value cellDisplay])
                                                            delegate:nil 
                                                   cancelButtonTitle:@"OK"
                                                   otherButtonTitles:nil];
@@ -365,14 +369,18 @@
         id convValue;
         
         if ([[arg valueForKey:@"type"] isEqualToString:@"long"] ||
-            [[arg valueForKey:@"type"] isEqualToString:@"int"]) {
+            [[arg valueForKey:@"type"] isEqualToString:@"int"] ||
+            [[arg valueForKey:@"type"] isEqualToString:@"short"]) {
             NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
             [f setNumberStyle:NSNumberFormatterDecimalStyle];
             convValue = [f numberFromString:value];
             [f release];
+            
         } else if ([[arg valueForKey:@"type"] isEqualToString:@"boolean"]) {
             BOOL boolValue = ([value isEqualToString:@"true"]? YES:NO);
             convValue = [NSNumber numberWithBool:boolValue];
+        } else {
+            convValue = value;  // for wrappers the default is string
         }
         
         [paramsValue replaceObjectAtIndex:[row intValue] withObject:convValue];
@@ -383,23 +391,64 @@
 }
 
 - (NSString *)beautifyJavaType:(NSString *)type {
-    if ([type isEqualToString:@"[J"]) {
-        return @"long[]";
-    } else if ([type isEqualToString:@"java.lang.String"]) {
-        return @"String";
-    } else if ([type isEqualToString:@"[Ljava.lang.String;"]) {
-        return @"String[]";
-    } else if ([type isEqualToString:@"javax.management.openmbean.CompositeData"]) {
-        return @"CompositeData";
-    } else if ([type isEqualToString:@"[Ljavax.management.openmbean.CompositeData;"]) {
-        return @"CompositeData[]";
-    } else if ([type isEqualToString:@"javax.management.openmbean.TabularData"]) {
-        return @"TabularData";
-    } else if ([type isEqualToString:@"[Ljavax.management.openmbean.TabularData;"]) {
-        return @"TabularData[]";
-    } else {
-        return type;
-    }
-}
+    NSMutableString *descr = [NSMutableString string];
 
+    if ([type hasPrefix:@"["]) { // the type is an array
+        
+        // the depth of a multidimensional array
+        int lastOccurenceOfLeftBracket = (int)([type rangeOfString:@"[" options:NSBackwardsSearch].location) + 1;
+        
+        // determine encoding of type
+        // see http://download.oracle.com/javase/6/docs/api/java/lang/Class.html#getName()
+        NSString *encoding = [type substringWithRange:NSMakeRange(lastOccurenceOfLeftBracket, 1)];
+        
+        if ([encoding isEqualToString:@"Z"]) {
+            [descr appendString:@"boolean"];
+        } else if ([encoding isEqualToString:@"B"]) {
+            [descr appendString:@"byte"];
+        } else if ([encoding isEqualToString:@"C"]) {
+            [descr appendString:@"char"];
+        } else if ([encoding isEqualToString:@"D"]) {
+            [descr appendString:@"double"];
+        } else if ([encoding isEqualToString:@"F"]) {
+            [descr appendString:@"float"];
+        } else if ([encoding isEqualToString:@"I"]) {
+            [descr appendString:@"int"];
+        } else if ([encoding isEqualToString:@"J"]) {
+            [descr appendString:@"long"];
+        } else if ([encoding isEqualToString:@"S"]) {
+            [descr appendString:@"short"];
+        } else if ([encoding isEqualToString:@"L"]) {  // class name e.g. [Ljava.lang.Object;
+            NSString *className = [type substringFromIndex:lastOccurenceOfLeftBracket+1];
+            
+            //strip out known package names
+            if ([className hasPrefix:@"javax.management.openmbean."]) {
+                [descr appendString:[className substringWithRange:NSMakeRange(27,[className length]-28)]];                
+            } else if ([className hasPrefix:@"java.lang."]) {
+                // cut the "java.lang"
+                [descr appendString:[className substringWithRange:NSMakeRange(10,[className length]-11)]];
+            } else {
+                [descr appendString:className];                        
+            }
+        }
+        
+        // append multidimensioanal (depth) indicators
+        for (int i = 0; i <= (lastOccurenceOfLeftBracket - 1); i++) {
+            [descr appendString:@"[]"];
+        }
+        
+    } else {
+        if ([type hasPrefix:@"javax.management.openmbean."]) {
+            type = [type substringWithRange:NSMakeRange(27,[type length]-27)];                
+        } else if ([type hasPrefix:@"java.lang."]) {
+            // cut the "java.lang" and ";" character
+            type = [type substringWithRange:NSMakeRange(10,[type length]-10)];
+        }
+        
+        [descr appendString:type];                        
+        
+    }
+    
+    return descr;
+}
 @end

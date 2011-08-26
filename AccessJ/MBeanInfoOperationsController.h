@@ -25,4 +25,7 @@
 @property (nonatomic, retain) UINavigationController *parentNavigationController;
 
 - (IBAction)refresh;
+
+- (NSString *)beautifyJavaType:(NSString *)type;
+- (BOOL)canEditType:(NSString *)type;
 @end

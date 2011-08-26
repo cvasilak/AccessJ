@@ -81,37 +81,40 @@
 	
 	NSUInteger row = [indexPath row];
 	
+    id <MBeanValue, NSObject> rawValue;
+    
     if ([self.data isKindOfClass:[NSDictionary class]]) {
         NSString *key = [sortedKeys objectAtIndex:row];
         
         cell.textLabel.text = key;
 
-        id <MBeanValue, NSObject> rawValue = [[self data]valueForKey:key];
-        
-        if (![rawValue isKindOfClass:[NSDictionary class]] &&
-            ![rawValue isKindOfClass:[NSArray class]]) {
+        rawValue = [[self data]valueForKey:key];
 
-            cell.accessoryType = UITableViewCellAccessoryNone;
-            cell.detailTextLabel.text = [rawValue cellDisplay];
-        } else {
-            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-            cell.detailTextLabel.text = @"";
-        }
+        // for NSArray and NSDictionary [cellDisplay] returns an empty string
+        cell.detailTextLabel.text = [rawValue cellDisplay];
    
     } else if ([self.data isKindOfClass:[NSArray class]]) {
-        if ([self.data count] > 0) {
-            id <MBeanValue, NSObject> rawValue = [self.data objectAtIndex:row];
+        rawValue = [self.data objectAtIndex:row];
 
-            if ([rawValue isKindOfClass:[NSDictionary class]] ||    // if the value is a dictionary or an array show the row number 
-                [rawValue isKindOfClass:[NSArray class]]) {
+        if ([rawValue isKindOfClass:[NSDictionary class]] ||    // if the value is a dictionary or an array show the row number 
+            [rawValue isKindOfClass:[NSArray class]]) {
 
-                cell.textLabel.text = [[NSNumber numberWithUnsignedInteger:row] stringValue];
-            } else {    // else show the primitive value
-                cell.textLabel.text = [rawValue cellDisplay];
-            }
+            cell.textLabel.text = [[NSNumber numberWithUnsignedInteger:row] stringValue];
+        } else {    // else show the primitive value
+            cell.textLabel.text = [rawValue cellDisplay];
         }
     } else {
         cell.textLabel.text = [[self.data objectAtIndex:row] cellDisplay];
+    }
+    
+    // for array / composite / tabular values show the disclosure indicator
+    // to inform the user that there is more down the rabbit hole...
+    if ([rawValue isKindOfClass:[NSDictionary class]] ||
+        [rawValue isKindOfClass:[NSArray class]]) {
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    } else {
+        
+        cell.accessoryType = UITableViewCellAccessoryNone;
     }
     
 	return cell;
@@ -127,7 +130,6 @@
     // we need to determine the type of the selected value
     // if its a dictionary or an array we allow the user
     // to proceed further down to the hierrachy
-    
     if ([self.data isKindOfClass:[NSDictionary class]]) {
         NSString *key = [sortedKeys objectAtIndex:row];
         rawValue = [self.data valueForKey:key];
