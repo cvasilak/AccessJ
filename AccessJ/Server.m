@@ -52,11 +52,12 @@
 }
 
 - (NSString *)hostport {
-    if ([username isEqualToString:@""] && [password isEqualToString:@""]) {
-        return [NSString stringWithFormat:@"http://%@:%@/jolokia", self.hostname, self.port];        
+    if ( (username != nil && ![username isEqualToString:@""]) ||
+         (password != nil && ![password isEqualToString:@""]) ) {
+        return [NSString stringWithFormat:@"https://%@:%@@%@:%@/jolokia/", self.username, self.password, self.hostname, self.port];        
     } 
 
-    return [NSString stringWithFormat:@"https://%@:%@@%@:%@/jolokia", self.username, self.password, self.hostname, self.port];        
+    return [NSString stringWithFormat:@"http://%@:%@/jolokia/", self.hostname, self.port];        
 }
 
 @end
