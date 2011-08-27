@@ -23,7 +23,7 @@ The application supports the following features:
 
 * __Allows execution of supported MBean operations__
 
-  Operations that accept standard types (e.g. integer,string,boolean) are supported. Future work is already in progress to support more complex types(a.k.a Composites) now that the Jolokia library in its newest version, supports it.
+  Operations that accept standard types (e.g. integer,string,boolean) are supported. Future work is already in progress to support more complex types(a.k.a Composites) now that the Jolokia library in its newest version(v0.95 upwards), supports it.
 
 * __Allows graphing of an MBean attribute__
 
