@@ -1,6 +1,6 @@
 ![AccessJ][1]
 
-AccessJ is an iPhone front-end to Java Management Extensions (JMX). As it's back-end engine it uses the excellent [Jolokia][2] library.
+AccessJ is an iPhone front-end to Java Management Extensions (JMX). For it's remote back-end java engine it uses the excellent [Jolokia][2] library.
 
 Upon starting the application for the first time, a demo server is provided so that you can experience the application.
 
