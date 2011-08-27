@@ -2,7 +2,7 @@
 
 AccessJ is an iPhone front-end to [Java Management Extensions (JMX)][0]. For it's remote back-end Java/JMX engine it uses the excellent [Jolokia][2] library.
 
-Upon starting the application for the first time, a demo server is provided so that you can experience the application.
+Upon starting the application for the first time, a demo server (a JBoss AS 7 server hosted in [OpenShift][4]) is provided so that you can experience the application.
 
 Features
 --------
@@ -51,3 +51,4 @@ Now that we have core functionality in-place, the following are some areas of fu
 [1]: http://dl.dropbox.com/u/155050/accessj-logo.png "AccessJ"
 [2]: http://www.jolokia.org/
 [3]: http://download.oracle.com/javase/6/docs/technotes/guides/management/jconsole.html
+[4]: https://openshift.redhat.com/app/
