@@ -122,7 +122,7 @@
 	}
 	
 	UILabel *label = (UILabel *) [cell viewWithTag:kLabelTag];
-	UITextField *textField;
+	UITextField *textField = nil;
 	
 	for (UIView *oneView in cell.contentView.subviews) {
 		if ([oneView isMemberOfClass:[UITextField class]])

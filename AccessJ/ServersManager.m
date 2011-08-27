@@ -80,7 +80,11 @@ static ServersManager *SharedServersManager = nil;
         // initialize an empty list
         // and add the AccessJ-demo site 
         // as a showcase for new users
-        self.list = [[NSMutableArray alloc] init];
+        
+        NSMutableArray *array = [[NSMutableArray alloc] init];
+        self.list = array;
+
+        [array release];
 
         Server *server = [[Server alloc] init];
         server.name = @"AccessJ-Demo";

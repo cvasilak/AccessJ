@@ -81,7 +81,7 @@
 	
 	NSUInteger row = [indexPath row];
 	
-    id <MBeanValue, NSObject> rawValue;
+    id <MBeanValue, NSObject> rawValue = nil;
     
     if ([self.data isKindOfClass:[NSDictionary class]]) {
         NSString *key = [sortedKeys objectAtIndex:row];
@@ -124,7 +124,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSUInteger row = [indexPath row];
 
-    id rawValue;
+    id rawValue = nil;
     NSString *title;
     
     // we need to determine the type of the selected value

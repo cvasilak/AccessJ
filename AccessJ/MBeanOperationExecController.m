@@ -61,7 +61,11 @@
     self.params = [op valueForKey:@"args"];
     
     // initialize params value to NSNull
-    self.paramsValue = [[NSMutableArray alloc] initWithCapacity:[self.params count]];
+    
+    NSMutableArray *list = [[NSMutableArray alloc] initWithCapacity:[self.params count]];
+    self.paramsValue = list;
+    [list release];
+    
     for (int i = 0; i < [self.params count]; i++) {
         [self.paramsValue addObject:[NSNull null]];
     }
@@ -91,6 +95,8 @@
                                    action:@selector(execute)];
     
     self.navigationItem.rightBarButtonItem = saveButton;
+    
+    [saveButton release];
 
     DLog(@"MBeanOperationExecController viewDidLoad");
 }
@@ -224,6 +230,7 @@
             
             [self.navigationController pushViewController:responseController animated:YES];
 
+            [responseController release];
             
         } else { //  else handle primitive response
             

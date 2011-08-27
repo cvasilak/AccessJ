@@ -185,7 +185,7 @@
 	
     NSUInteger row = [indexPath row];
     
-    id <MBeanValue, NSObject> rawValue;
+    id <MBeanValue, NSObject> rawValue = nil;
     
     if (isInRootAttributesScreen) {
         NSDictionary *attr;
@@ -253,7 +253,7 @@
 
     NSUInteger row = [indexPath row];
 
-    id <MBeanValue, NSObject> rawValue;
+    id <MBeanValue, NSObject> rawValue = nil;
     NSString *title;
     
     //TODO: Refactor me

@@ -166,11 +166,11 @@
                 node = [subtree objectForKey:value];
 
                 if (node == nil) {
-                    node = [[NSMutableDictionary alloc] init];
+                    node = [[[NSMutableDictionary alloc] init] autorelease];
                 }
                 
                 [subtree setObject:node forKey:value];
-
+                
                 subtree = node;
             }
             
@@ -184,6 +184,8 @@
             
             [subtree setObject:mbean forKey:@"MBEAN_TAIL"];  // TODO: better name
  
+            [mbean release];
+            
             [properties release];
             [sortedPropertyNames release];
         }
