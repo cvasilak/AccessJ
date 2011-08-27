@@ -129,7 +129,10 @@
     [button release];
 
     // Setup graph
-    self.dataForPlot = [[NSMutableArray alloc] init]; //by default empty
+    NSMutableArray *theDataForPlot = [[NSMutableArray alloc] init]; //by default empty
+    self.dataForPlot = theDataForPlot;
+    
+    [theDataForPlot release];
     
     // append the path in title fpr Composite/Tabular data
     if ([path isEqualToString:@""]) {
@@ -189,6 +192,8 @@
     GraphPoint *gp = [[GraphPoint alloc] initWithTimestamp:x value:y];
     [dataForPlot addObject:gp];	
     
+    [gp release];
+    
     // we need to have at least one plot otherwise an error is thrown by the library
     // if we set the graph to an empty array.
     if ([dataForPlot count] == 1) {
@@ -206,16 +211,11 @@
 }
 
 - (void)requestFailed:(ASIHTTPRequest *)request {
-    NSError *error = [request error];
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error!"
-                                                    message:[error localizedDescription]
-                                                   delegate:nil 
-                                          cancelButtonTitle:@"Bummer"
-                                          otherButtonTitles:nil];
+    // stop the timer
+    [self.updateTimer invalidate];
     
-    [alert show];
-    [alert release];
+    graph.title.text = [[request error] localizedDescription];
 }
 
 #pragma mark - Actions
