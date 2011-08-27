@@ -1,7 +1,49 @@
 ![AccessJ][1]
 
-AccessJ is an iPhone front-end to Java Management Extensions (JMX). As it's back-end engine it uses the excellent [Jolokia][2] libray. 
+AccessJ is an iPhone front-end to Java Management Extensions (JMX). As it's back-end engine it uses the excellent [Jolokia][2] library.
+
+Features
+--------
+
+The application supports the following features:
+
+* __Secure Communication__
+
+   If username/password credentials are supplied by the user, the application establishes an HTTPS/SSL connection to the server. The feature implies that the user has correctly setup the remote backend to support it. Take note that Jolokia offers comprehensive security mechanisms that can be configured by the user for more fine grained security of the MBeans exposed by the agent. Please consult the Jolokia documentation for more information.
+
+* __Browse the full JMX Management tree__
+
+  The tree is sorted based on the "keyPropertyList" configurable by the user a.l.a [JConsole][3]. Default is by "type" and the order of the "key=value" properties as defined in the ObjectName of the MBean. More information about the ordering can be found in the JConsole documentation.
+
+* __Allows edititing of read/write attributes of an MBean__
+
+  Upon clicking a read/write attribute name, the user is prompted to edit the value. Common editors are supported (String, Integer, Boolean)
+
+* __Allows execution of supported MBean operations__
+
+  Operations that accept standard types (e.g. integer,string,boolean) are supported. Future work is already in progress to support more complex types(a.k.a Composites) now that the Jolokia library in its newest version supports it.
+
+* __Allows graphing of an MBean attribute__
+
+
+Future work
+-----------
+
+Now that the basic staff are in place, the following are some areas of future work:
+
+* __Searching__
+
+* __Bookmarking__
+
+* __Plotting of more than one attribute simultaneously__
+
+* __Java VM MXBeans "on-click-access"__
+
+* __JMX to IOS Notification bridge__
+
+
 
 
 [1]: http://dl.dropbox.com/u/155050/accessj-logo.png "AccessJ"
 [2]: http://www.jolokia.org/
+[3]: http://download.oracle.com/javase/6/docs/technotes/guides/management/jconsole.html
