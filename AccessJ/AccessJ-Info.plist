@@ -12,8 +12,8 @@
 	<string></string>
 	<key>CFBundleIconFiles</key>
 	<array>
-		<string>accessj-57x57.png</string>
 		<string>accessj-114x114.png</string>
+		<string>accessj-57x57.png</string>
 	</array>
 	<key>CFBundleIdentifier</key>
 	<string>org.cvasilak.${PRODUCT_NAME:rfc1034identifier}</string>
