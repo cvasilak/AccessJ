@@ -9,7 +9,7 @@ The application supports the following features:
 
 * __Secure Communication__
 
-   If username/password credentials are supplied by the user, the application establishes an HTTPS/SSL connection to the server together with Basic Authentication. The feature implies that the user has correctly setup the remote backend to support it. Take note that Jolokia offers comprehensive security mechanisms that can be configured by the user for more fine grained security of the MBeans exposed by the agent. Please consult the Jolokia documentation for more information.
+   If username/password credentials are supplied by the user, the application establishes an HTTPS/SSL connection to the server together with Basic Authentication. The feature implies that the user has correctly setup the remote backend to support it. Take note that Jolokia offers comprehensive security mechanisms that can be configured by the user for more fine grained security of the MBeans exposed by the agent. Please consult the [Jolokia][2] documentation for more information.
 
 * __Browse of the full JMX Management tree__
 
