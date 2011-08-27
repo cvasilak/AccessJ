@@ -9,7 +9,7 @@ The application supports the following features:
 
 * __Secure Communication__
 
-   If username/password credentials are supplied by the user, the application establishes an HTTPS/SSL connection to the server together with Basic Authentication. The feature implies that the user has correctly setup the remote backend to support it. Take note that Jolokia offers comprehensive security mechanisms that can be configured by the user for more fine grained security of the MBeans exposed by the agent. Please consult the [Jolokia][2] documentation for more information.
+   If username/password credentials are supplied by the user, the application establishes an HTTPS/SSL connection to the server together with Basic Authentication. The feature implies that the user has correctly setup the remote backend to support it. Take note that [Jolokia][2] offers comprehensive security mechanisms that can be configured by the user for more fine grained security of the MBeans exposed by the agent. Please consult the [Jolokia][2] documentation for more information.
 
 * __Browse of the full JMX Management tree__
 
@@ -17,7 +17,7 @@ The application supports the following features:
 
 * __Allows editing of read/write attributes of an MBean__
 
-  Upon clicking a read/write attribute name, the user is prompted to edit the value. Common editors are supported (String, Integer, Boolean)
+  Upon clicking a read/write attribute name, the user is prompted to edit the value. Common editors are supported (string, integer, boolean)
 
 * __Allows execution of supported MBean operations__
 
@@ -25,7 +25,7 @@ The application supports the following features:
 
 * __Allows graphing of an MBean attribute__
 
-  For attributes of type number, a nice graph is displayed upon clicking on it. The update interval is configurable by the user (default 2 seconds and max 15)
+  For attributes of type number, a nice graph is displayed upon clicking the attribute. The update interval is configurable by the user (default is 2 seconds with max value 15 seconds)
 
 Future work
 -----------
