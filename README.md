@@ -32,7 +32,7 @@ The application supports the following features:
 Future work
 -----------
 
-Now that the basic staff are in place, the following are some areas of future work:
+Now that we have core functionality in place, the following are some areas of future work:
 
 * __Searching__
 
