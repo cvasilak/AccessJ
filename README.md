@@ -9,13 +9,13 @@ The application supports the following features:
 
 * __Secure Communication__
 
-   If username/password credentials are supplied by the user, the application establishes an HTTPS/SSL connection to the server. The feature implies that the user has correctly setup the remote backend to support it. Take note that Jolokia offers comprehensive security mechanisms that can be configured by the user for more fine grained security of the MBeans exposed by the agent. Please consult the Jolokia documentation for more information.
+   If username/password credentials are supplied by the user, the application establishes an HTTPS/SSL connection to the server together with Basic Authentication. The feature implies that the user has correctly setup the remote backend to support it. Take note that Jolokia offers comprehensive security mechanisms that can be configured by the user for more fine grained security of the MBeans exposed by the agent. Please consult the Jolokia documentation for more information.
 
-* __Browse the full JMX Management tree__
+* __Browse of the full JMX Management tree__
 
-  The tree is sorted based on the "keyPropertyList" configurable by the user a.l.a [JConsole][3]. Default is by "type" and the order of the "key=value" properties as defined in the ObjectName of the MBean. More information about the ordering can be found in the JConsole documentation.
+  The tree is sorted based on the "keyPropertyList" configurable by the user a.l.a [JConsole][3]. Default is by "type" and the order of the "key=value" properties as defined in the ObjectName of the MBean. More information about the ordering can be found in the [JConsole][3] documentation.
 
-* __Allows edititing of read/write attributes of an MBean__
+* __Allows editing of read/write attributes of an MBean__
 
   Upon clicking a read/write attribute name, the user is prompted to edit the value. Common editors are supported (String, Integer, Boolean)
 
@@ -25,6 +25,7 @@ The application supports the following features:
 
 * __Allows graphing of an MBean attribute__
 
+  For attributes of type number, a nice graph is displayed upon clicking on it. The update interval is configurable by the user (default 2 seconds and max 15)
 
 Future work
 -----------
@@ -37,7 +38,7 @@ Now that the basic staff are in place, the following are some areas of future wo
 
 * __Plotting of more than one attribute simultaneously__
 
-* __Java VM MXBeans "on-click-access"__
+* __Java VM MXBeans "one-click-access"__
 
 * __JMX to IOS Notification bridge__
 
