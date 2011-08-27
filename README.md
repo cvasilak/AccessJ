@@ -11,7 +11,7 @@ The application supports the following features:
 
    If username/password credentials are supplied by the user, the application establishes an HTTPS/SSL connection to the server together with Basic Authentication. The feature implies that the user has correctly setup the remote backend to support it. Take note that [Jolokia][2] offers comprehensive security mechanisms that can be configured by the user for more fine grained security of the MBeans exposed by the agent. Please consult the [Jolokia][2] documentation for more information.
 
-* __Browse of the full JMX Management tree__
+* __Browsing of the full JMX Management tree__
 
   The tree is sorted based on the "keyPropertyList" configurable by the user a.l.a [JConsole][3]. Default is by "type" and the order of the "key=value" properties as defined in the ObjectName of the MBean. More information about the ordering can be found in the [JConsole][3] documentation.
 
