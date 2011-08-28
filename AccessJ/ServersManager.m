@@ -88,14 +88,17 @@ static ServersManager *SharedServersManager = nil;
 
         Server *server = [[Server alloc] init];
         server.name = @"AccessJ-Demo";
-        server.hostname = @"jolokia-accessjdemo.rhcloud.com";
-        server.keyPropertyList = @"type, model";
-        server.port = @"80";
+        server.hostname = @"cvasilak.org";
+        server.keyPropertyList = @"type, service";
+        server.port = @"8080";
         server.username = @"";
         server.password = @"";
         
         [self addServer:server];
+        
         [server release];
+        
+        [self save];
     }
 }
 
