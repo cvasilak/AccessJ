@@ -108,6 +108,7 @@
     
     // {domains}
     NSDictionary *dlist = [[[request responseString] JSONValue] objectForKey:@"value"];
+    
     NSMutableDictionary *list = [[NSMutableDictionary alloc] init]; 
     
     // foreach domain in the list
