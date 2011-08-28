@@ -90,7 +90,7 @@ static ServersManager *SharedServersManager = nil;
         server.name = @"AccessJ-Demo";
         server.hostname = @"cvasilak.org";
         server.keyPropertyList = @"type, service";
-        server.port = @"8080";
+        server.port = @"80";
         server.username = @"";
         server.password = @"";
         
