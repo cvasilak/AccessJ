@@ -1,8 +1,8 @@
 ![AccessJ][1]
 
-AccessJ is an iPhone front-end to [Java Management Extensions (JMX)][0]. For it's remote back-end Java/JMX engine it uses the excellent [Jolokia][2] library.
+AccessJ is an iPhone front-end to Java Management Extensions (JMX). It will allow you to easily configure a remote Java Application as long as it exposes its information as management beans. For it's remote back-end Java/JMX engine it uses the excellent Jolokia library.
 
-Upon starting the application for the first time, a demo server (a JBoss AS 6 server) is provided so that you can experience the application. Note that that server is in read-only mode for obvious reasons.
+A demo server (JBoss 6) is provided so that you can experience the application running. (Note that that server is in read-only mode for obvious reasons.)
 
 Features
 --------
