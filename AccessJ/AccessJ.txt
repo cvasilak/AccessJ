@@ -17,7 +17,8 @@ TODO:
     Error Handling
     support "com.sun.tools.jconsole.mbeans.keyPropertyList" as jconsole
 
-Future:
+Future work:
+    Searching
     Add Bookmarking (attribute, operation probably on the editor screen)
     Add several attributes to plot instead of one
     Java VM MXBeans "on-click-access"
