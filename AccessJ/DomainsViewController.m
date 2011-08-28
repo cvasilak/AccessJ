@@ -109,6 +109,19 @@
     // {domains}
     NSDictionary *dlist = [[[request responseString] JSONValue] objectForKey:@"value"];
     
+    if (dlist == nil) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error!"
+                                                        message:@"Invalid response from server, please check your jolokia installation!"
+                                                       delegate:nil 
+                                              cancelButtonTitle:@"Bummer"
+                                              otherButtonTitles:nil];
+        
+        [alert show];
+        [alert release];
+        
+        return;
+    }
+    
     NSMutableDictionary *list = [[NSMutableDictionary alloc] init]; 
     
     // foreach domain in the list
