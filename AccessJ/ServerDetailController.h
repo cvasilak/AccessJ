@@ -8,14 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
-#define kNumberOfEditableRows	6
+#define kNumberOfEditableRows	8
 
-#define kServerNameRowIndex         0
-#define kServerHostnameRowIndex     1
-#define kServerPortRowIndex         2
-#define kServerKeyPropertyListIndex 3
-#define kServerUsernameRowIndex     4
-#define kServerPasswordRowIndex     5
+#define kServerNameRowIndex             0
+#define kServerHostnameRowIndex         1
+#define kServerPortRowIndex             2
+#define kServerContextPathRowIndex      3
+#define kServerKeyPropertyListRowIndex  4
+#define kServerUseSSLRowIndex           5
+#define kServerUsernameRowIndex         6
+#define kServerPasswordRowIndex         7
 
 #define kNonEditableTextColor  [UIColor colorWithRed:.318 green:0.4 blue:.569 alpha:7.0]
 
@@ -39,5 +41,5 @@
 - (IBAction)cancel:(id)sender;
 - (IBAction)save:(id)sender;
 - (void)textFieldDone:(id)sender;
-
+- (void)switchValueChanged:(id)sender;
 @end

@@ -89,8 +89,9 @@ static ServersManager *SharedServersManager = nil;
         Server *server = [[Server alloc] init];
         server.name = @"AccessJ-Demo";
         server.hostname = @"cvasilak.org";
-        server.keyPropertyList = @"type, service";
         server.port = @"80";
+        server.contextPath = @"/jolokia";
+        server.keyPropertyList = @"type, service";
         server.username = @"";
         server.password = @"";
         

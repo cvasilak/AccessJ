@@ -19,7 +19,6 @@
 @synthesize tempValues;
 @synthesize textFieldBeingEdited;
 
-
 - (void)dealloc {
     [server release];
 	[fieldLabels release];
@@ -46,7 +45,7 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
-	NSArray *array = [[NSArray alloc] initWithObjects:@"Name", @"Hostname", @"Port", @"keyPropertyList", @"Username", @"Password", nil];
+	NSArray *array = [[NSArray alloc] initWithObjects:@"Name", @"Hostname", @"Port", @"Context Path", @"keyPropertyList", @"Use SSL", @"Username", @"Password", nil];
 	self.fieldLabels = array;
 	
 	[array release];
@@ -62,9 +61,11 @@
 	NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
     
     if (server == nil) { // new server
-        [dict setObject:@"type" forKey:[NSNumber numberWithInt:kServerKeyPropertyListIndex]];
-    }
+        [dict setObject:@"/jolokia" forKey:[NSNumber numberWithInt:kServerContextPathRowIndex]];
+        [dict setObject:@"type" forKey:[NSNumber numberWithInt:kServerKeyPropertyListRowIndex]];
         
+    }
+    
 	self.tempValues = dict;
 	[dict release];
 	
@@ -81,52 +82,81 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	static NSString *CellIdentifier = @"ServerCellEditIdentifer";
+	static NSString *CellEditIdentifier = @"ServerCellEditIdentifer";
+  	static NSString *CellEditSwitchIdentifier = @"ServerCellEditSwitchIdentifer";
+    
 	NSUInteger row = [indexPath row];
 	
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell;
+    
+    if (row == kServerUseSSLRowIndex) {
+        cell = [tableView dequeueReusableCellWithIdentifier:CellEditSwitchIdentifier];        
+    } else {
+        cell = [tableView dequeueReusableCellWithIdentifier:CellEditIdentifier];        
+    }
 	
 	if (cell == nil) {
-		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-
+        if (row == kServerUseSSLRowIndex /* || anotherUISwitchRowIndex*/) {
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellEditSwitchIdentifier] autorelease];
+            
+            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 110, 25)];
+            label.tag = kLabelTag;
+            label.textAlignment = UITextAlignmentRight;
+            label.font = [UIFont boldSystemFontOfSize:12.0];
+            label.textColor = kNonEditableTextColor;
+            
+            [cell.contentView addSubview:label];
+            [label release];
+            
+            UISwitch *toggler = [[UISwitch alloc] initWithFrame:CGRectMake(130, 10, 100, 25)];
+            [toggler addTarget:self action:@selector(switchValueChanged:) forControlEvents:UIControlEventValueChanged];
+            
+            [cell.contentView addSubview:toggler];
+        } else {
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellEditIdentifier] autorelease];
+            
+            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 110, 25)];
+            label.tag = kLabelTag;
+            label.textAlignment = UITextAlignmentRight;
+            label.font = [UIFont boldSystemFontOfSize:12.0];
+            label.textColor = kNonEditableTextColor;
+            
+            [cell.contentView addSubview:label];
+            [label release];
+            
+            UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(130, 10, 168, 25)];
+            textField.clearsOnBeginEditing = NO;
+            [textField setDelegate:self];
+            if (row == kServerPasswordRowIndex)
+                [textField setSecureTextEntry:YES];
+            else
+                [textField setSecureTextEntry:NO];
+            
+            if (row == kServerPortRowIndex)
+                [textField setKeyboardType:UIKeyboardTypeDecimalPad];
+            else 
+                [textField setKeyboardType:UIKeyboardTypeDefault];
+            
+            textField.returnKeyType = UIReturnKeyDone;
+            textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+            [textField addTarget:self action:@selector(textFieldDone:) forControlEvents:UIControlEventEditingDidEndOnExit];
+            
+            [cell.contentView addSubview:textField];
+        }
+        
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        
-		UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 110, 25)];
-		label.tag = kLabelTag;
-		label.textAlignment = UITextAlignmentRight;
-		label.font = [UIFont boldSystemFontOfSize:12.0];
-		label.textColor = kNonEditableTextColor;
-		
-		[cell.contentView addSubview:label];
-		[label release];
-		
-		UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(130, 10, 168, 25)];
-		textField.clearsOnBeginEditing = NO;
-		[textField setDelegate:self];
-        if (row == kServerPasswordRowIndex)
-            [textField setSecureTextEntry:YES];
-        else
-            [textField setSecureTextEntry:NO];
-        
-        if (row == kServerPortRowIndex)
-            [textField setKeyboardType:UIKeyboardTypeDecimalPad];
-        else 
-            [textField setKeyboardType:UIKeyboardTypeDefault];
-        
-       
-		textField.returnKeyType = UIReturnKeyDone;
-        textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
-		[textField addTarget:self action:@selector(textFieldDone:) forControlEvents:UIControlEventEditingDidEndOnExit];
-		
-		[cell.contentView addSubview:textField];
 	}
 	
 	UILabel *label = (UILabel *) [cell viewWithTag:kLabelTag];
 	UITextField *textField = nil;
-	
-	for (UIView *oneView in cell.contentView.subviews) {
+    UISwitch *toggler = nil;
+    
+    for (UIView *oneView in cell.contentView.subviews) {
 		if ([oneView isMemberOfClass:[UITextField class]])
 			textField = (UITextField *) oneView;
+        else if ([oneView isMemberOfClass:[UISwitch class]]) {
+            toggler = (UISwitch *) oneView;
+        }
 	}
 	
 	label.text = [fieldLabels objectAtIndex:row];
@@ -154,11 +184,25 @@
 				textField.text = server.port;
 			
 			break;
-		case kServerKeyPropertyListIndex:
+        case kServerContextPathRowIndex:
+            if ([[tempValues allKeys] containsObject:rowAsNum])
+				textField.text = [tempValues objectForKey:rowAsNum];
+			else
+				textField.text = server.contextPath;
+			
+			break;
+		case kServerKeyPropertyListRowIndex:
 			if ([[tempValues allKeys] containsObject:rowAsNum])
 				textField.text = [tempValues objectForKey:rowAsNum];
 			else
 				textField.text = server.keyPropertyList;
+			
+			break;
+		case kServerUseSSLRowIndex:
+			if ([[tempValues allKeys] containsObject:rowAsNum])
+				toggler.on = [[tempValues objectForKey:rowAsNum] boolValue];
+			else
+				toggler.on = server.isSSLSecured;
 			
 			break;
 		case kServerUsernameRowIndex:
@@ -175,18 +219,31 @@
 				textField.text = server.password;
             
 			break;
-
+            
 		default:
 			break;
 	}
 	
 	if (textFieldBeingEdited == textField)
 		textFieldBeingEdited = nil;
-	
-	textField.tag = row;
+    
+    if (toggler != NULL)
+        toggler.tag = row;
+    else
+       	textField.tag = row;
+    
 	[rowAsNum release];
 	
 	return cell;
+}
+
+#pragma mark - UISwitch value changed
+- (void)switchValueChanged: (id)sender {
+    UISwitch *toggler = (UISwitch *) sender;
+
+	NSNumber *tagAsNum = [[NSNumber alloc] initWithInt:toggler.tag];
+	[tempValues setObject:[NSNumber numberWithBool:toggler.on] forKey:tagAsNum];
+	[tagAsNum release];   
 }
 
 #pragma mark - UITextFieldDelegate methods
@@ -234,7 +291,7 @@
         
         [textFieldBeingEdited resignFirstResponder];
 	}
-
+    
     Server *theServer;
     
     if (server == nil)
@@ -253,8 +310,14 @@
 			case kServerPortRowIndex:
 				theServer.port = [tempValues objectForKey:key];
 				break;
-			case kServerKeyPropertyListIndex:
+            case kServerContextPathRowIndex:
+                theServer.contextPath = [tempValues objectForKey:key];
+                break;
+			case kServerKeyPropertyListRowIndex:
 				theServer.keyPropertyList = [tempValues objectForKey:key];
+				break;
+			case kServerUseSSLRowIndex:
+				theServer.isSSLSecured = [[tempValues objectForKey:key] boolValue];
 				break;
 			case kServerUsernameRowIndex:
 				theServer.username = [tempValues objectForKey:key];
@@ -266,13 +329,14 @@
 				break;
 		}
 	}
-
+    
     // At least hostname and port must be defined
     if ([theServer.hostname length] == 0 ||
         [theServer.port length] == 0) {
-
+        
+        
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error!"
-                                                        message:@"please complete at least the Hostname and Port field"
+                                                        message:@"Please complete at least Hostname and Port field!"
                                                        delegate:nil 
                                               cancelButtonTitle:@"Bummer"
                                               otherButtonTitles:nil];
@@ -281,7 +345,14 @@
         [alert release];
         return;
     }
-        
+    
+    // Prefix the context path with the /
+    // character if it is missing.
+    if ([theServer.contextPath length] != 0 &&
+        ![theServer.contextPath hasPrefix:@"/"]) {
+        theServer.contextPath = [@"/" stringByAppendingString:theServer.contextPath];
+    }
+    
     if (server == nil) {  // if it is a new server 
         [[ServersManager sharedServersManager] addServer:theServer]; // add it to the list
         [theServer release];
@@ -291,7 +362,7 @@
         // update server list on disk
         [[ServersManager sharedServersManager] save];
     }
-
+    
 	[self.navigationController popViewControllerAnimated:YES];
 }
 

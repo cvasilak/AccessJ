@@ -12,7 +12,9 @@
 @synthesize name;
 @synthesize hostname;
 @synthesize port;
+@synthesize contextPath;
 @synthesize keyPropertyList;
+@synthesize isSSLSecured;
 @synthesize username;
 @synthesize password;
 
@@ -20,11 +22,12 @@
 	[name release];
 	[hostname release];
     [port release];
+    [contextPath release];
     [keyPropertyList release];
 	[username release];
 	[password release];
     
-	[super dealloc];
+    [super dealloc];
 }
 
 #pragma mark -
@@ -33,7 +36,9 @@
 	[aCoder encodeObject:self.name forKey:kServerNameKey];
 	[aCoder encodeObject:self.hostname forKey:kServerHostnameKey];
    	[aCoder encodeObject:self.port forKey:kServerPortKey];
-   	[aCoder encodeObject:self.keyPropertyList forKey:kPropertyList];
+    [aCoder encodeObject:self.contextPath forKey:kServerContextPathKey];
+   	[aCoder encodeObject:self.keyPropertyList forKey:kPropertyListKey];
+    [aCoder encodeBool:self.isSSLSecured forKey:kisSSLSecured];
 	[aCoder encodeObject:self.username forKey:kServerUsernameKey];
 	[aCoder encodeObject:self.password forKey:kServerPasswordKey];
 }
@@ -43,7 +48,9 @@
 		self.name = [aDecoder decodeObjectForKey:kServerNameKey];
 		self.hostname = [aDecoder decodeObjectForKey:kServerHostnameKey];
    		self.port = [aDecoder decodeObjectForKey:kServerPortKey];
-        self.keyPropertyList = [aDecoder decodeObjectForKey:kPropertyList];
+        self.contextPath = [aDecoder decodeObjectForKey:kServerContextPathKey];
+        self.keyPropertyList = [aDecoder decodeObjectForKey:kPropertyListKey];
+        self.isSSLSecured = [aDecoder decodeBoolForKey:kisSSLSecured];
 		self.username = [aDecoder decodeObjectForKey:kServerUsernameKey];
 		self.password = [aDecoder decodeObjectForKey:kServerPasswordKey];
 	}
@@ -52,12 +59,26 @@
 }
 
 - (NSString *)hostport {
-    if ( (username != nil && ![username isEqualToString:@""]) ||
-         (password != nil && ![password isEqualToString:@""]) ) {
-        return [NSString stringWithFormat:@"https://%@:%@@%@:%@/jolokia/", self.username, self.password, self.hostname, self.port];        
-    } 
+    NSMutableString *hostport = [NSMutableString stringWithCapacity:100];
+    
+    if (isSSLSecured)
+        [hostport appendString:@"https://"];
+    else
+        [hostport appendString:@"http://"];
+    
+    if (username != nil && ![username isEqualToString:@""]) {
+        [hostport appendFormat:@"%@:%@@", username, password];
+    }
 
-    return [NSString stringWithFormat:@"http://%@:%@/jolokia/", self.hostname, self.port];        
+    [hostport appendFormat:@"%@:%@", hostname, port];
+    
+    if ([contextPath length] == 0)  {
+        [hostport appendString:@"/jolokia"];
+    } else {
+        [hostport appendString:self.contextPath];
+    }
+    
+    return hostport;
 }
 
 @end

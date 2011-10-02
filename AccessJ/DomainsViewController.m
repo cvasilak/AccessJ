@@ -77,7 +77,7 @@
 #pragma mark - Request / Response
 - (void)makeRequest {
     
-    DLog(@"[[fetching list...]]");
+    DLog(@"[[fetching list from %@]]", server.hostport);
 
     [spinner startAnimating];
     
