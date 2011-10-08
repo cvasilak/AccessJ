@@ -82,8 +82,9 @@
     [spinner startAnimating];
     
     NSDictionary *requestBody = [NSDictionary dictionaryWithObjectsAndKeys:@"LIST", @"type",
-                                 @"/", @"path",
                                  nil];
+    
+    //DLog(@"%@", [requestBody JSONRepresentation]);
     
     NSURL *url = [NSURL URLWithString:server.hostport];
 
@@ -105,6 +106,8 @@
     [spinner stopAnimating];
     
     NSArray *keyPropertyList = [server.keyPropertyList componentsSeparatedByString:@","];
+    
+    //DLog(@"%@", [request responseString]);
     
     // {domains}
     NSDictionary *dlist = [[[request responseString] JSONValue] objectForKey:@"value"];
