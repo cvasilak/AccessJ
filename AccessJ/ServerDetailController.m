@@ -104,11 +104,12 @@
             label.textAlignment = UITextAlignmentRight;
             label.font = [UIFont boldSystemFontOfSize:12.0];
             label.textColor = kNonEditableTextColor;
+            label.backgroundColor = [UIColor clearColor];
             
             [cell.contentView addSubview:label];
             [label release];
             
-            UISwitch *toggler = [[UISwitch alloc] initWithFrame:CGRectMake(130, 10, 100, 25)];
+            UISwitch *toggler = [[UISwitch alloc] initWithFrame:CGRectMake(130, 10, 0, 0)];
             [toggler addTarget:self action:@selector(switchValueChanged:) forControlEvents:UIControlEventValueChanged];
             
             [cell.contentView addSubview:toggler];
@@ -120,7 +121,7 @@
             label.textAlignment = UITextAlignmentRight;
             label.font = [UIFont boldSystemFontOfSize:12.0];
             label.textColor = kNonEditableTextColor;
-            
+            label.backgroundColor = [UIColor clearColor];
             [cell.contentView addSubview:label];
             [label release];
             
