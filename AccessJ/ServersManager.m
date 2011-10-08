@@ -91,7 +91,7 @@ static ServersManager *SharedServersManager = nil;
         server.hostname = @"cvasilak.org";
         server.port = @"80";
         server.contextPath = @"/jolokia";
-        server.keyPropertyList = @"type, service";
+        server.keyPropertyList = @"type, module";
         server.username = @"";
         server.password = @"";
         
