@@ -40,6 +40,7 @@
         
         UIFont *font = [UIFont boldSystemFontOfSize:18.0];
         label.textColor = kNonEditableTextColor;
+        label.backgroundColor = [UIColor clearColor];        
         label.font = font;
         [cell.contentView addSubview:label];
         [label release];
