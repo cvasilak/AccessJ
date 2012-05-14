@@ -48,6 +48,6 @@ Now that we have core functionality in-place, the following are some areas of fu
 
 
 [0]: http://en.wikipedia.org/wiki/Java_Management_Extensions
-[1]: http://dl.dropbox.com/u/155050/accessj-logo.png "AccessJ"
+[1]: http://cvasilak.org/images/accessj-logo.png "AccessJ"
 [2]: http://www.jolokia.org/
 [3]: http://download.oracle.com/javase/6/docs/technotes/guides/management/jconsole.html
