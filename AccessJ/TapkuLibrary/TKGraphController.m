@@ -43,7 +43,7 @@
 
 
 - (void) loadView{
-	graph = [[TKGraphView alloc] initWithFrame:CGRectMake(0, 0, 480, 300)];
+	graph = [[TKGraphView alloc] initWithFrame:CGRectMake(0, 0, (IS_WIDESCREEN? 568: 480), 300)];
 	self.view = graph;
 }
 

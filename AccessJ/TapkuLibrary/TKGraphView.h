@@ -56,7 +56,7 @@
 	
 	// BASE ELEMENTS
 	UILabel *titleLabel;
-	UIImageView *border;
+	//UIImageView *border;
 	UIScrollView *scrollView;
 	TKGraphViewPlotView *plotView;
 }

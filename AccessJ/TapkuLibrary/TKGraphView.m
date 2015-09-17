@@ -377,8 +377,8 @@ static float highValue;
 	scrollView.backgroundColor = [UIColor clearColor];
 	[self addSubview:scrollView];
 	
-	border = [[UIImageView alloc] initWithImage:[UIImage imageNamedTK:@"TapkuLibrary.bundle/Images/graph/mask"]];
-	[self addSubview:border];
+	//border = [[UIImageView alloc] initWithImage:[UIImage imageNamedTK:@"TapkuLibrary.bundle/Images/graph/mask"]];
+	//[self addSubview:border];
 	
 	plotView = [[TKGraphViewPlotView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
 	plotView.backgroundColor = [UIColor clearColor];
@@ -423,12 +423,12 @@ static float highValue;
 	
 	
 	float x = point * POINT_DISTANCE;
-	[scrollView setContentOffset:CGPointMake(x-480+POINT_DISTANCE*2, 0) animated:animated];
+	[scrollView setContentOffset:CGPointMake(x-(IS_WIDESCREEN? 568: 480)+POINT_DISTANCE*2, 0) animated:animated];
 	
 	
 	
 	CGRect r = goalLabel.frame;
-	r.origin.x = x-480+POINT_DISTANCE*2 + 420;
+	r.origin.x = x-(IS_WIDESCREEN? 568.0: 480.0)+POINT_DISTANCE*2 + (IS_WIDESCREEN? 508.0: 480.0);
 	if(animated){
 		[UIView beginAnimations:NULL context:nil];
 		[UIView setAnimationDuration:.2];
@@ -588,12 +588,12 @@ static float highValue;
 - (void) drawBackground:(CGContextRef)context{
 	// GRAY BACKGROUND 
 	CGContextSetRGBFillColor(context, 1, 1, 1, 1.0);
-	CGContextFillRect(context, CGRectMake(0, 0, 480.0, 300.0));
+	CGContextFillRect(context, CGRectMake(0, 0, (IS_WIDESCREEN? 568.0: 480.0), 300.0));
 	CGContextSetRGBFillColor(context, 240.0/255.0, 240.0/255.0, 240.0/255.0, 0.4);
-	CGContextFillRect(context, CGRectMake(0, 0, 480.0, BOTTOM_LINE));
+	CGContextFillRect(context, CGRectMake(0, 0, (IS_WIDESCREEN? 568.0: 480.0), BOTTOM_LINE));
 }
 - (void) drawBottomLine:(CGContextRef)context{
-	[UIView drawLineInRect:CGRectMake(0, BOTTOM_LINE+.5, 480, 0) red:0 green:0 blue:0 alpha:.4];
+	[UIView drawLineInRect:CGRectMake(0, BOTTOM_LINE+.5, (IS_WIDESCREEN? 568.0: 480.0), 0) red:0 green:0 blue:0 alpha:.4];
 }
 - (void) drawHorizontalLines:(CGContextRef)context{
 	
@@ -712,7 +712,7 @@ static float highValue;
 	[goalLabel release];
 	[indicator release];
 	[titleLabel release];
-	[border release];
+	//[border release];
 	[scrollView release];
 	[plotView release];
     [super dealloc];
