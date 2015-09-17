@@ -40,9 +40,9 @@
     
     if((interfaceOrientation == UIInterfaceOrientationLandscapeLeft)||
        (interfaceOrientation == UIInterfaceOrientationLandscapeRight)) {
-       newFrame =  CGRectMake(0.0, 0.0, 480, 320);
+       newFrame =  CGRectMake(0.0, 0.0, IS_WIDESCREEN? 550: 480, 320);
     } else if ((interfaceOrientation == UIInterfaceOrientationPortrait) || interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown) {
-        newFrame = CGRectMake(0.0, 0.0, 320, 480);
+        newFrame = CGRectMake(0.0, 0.0, 320, IS_WIDESCREEN? 568: 480);
     }
     
     [self.view setFrame:newFrame];

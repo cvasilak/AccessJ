@@ -116,7 +116,7 @@
     [controller release];
     
     UIButton * button = [[UIButton buttonWithType:UIButtonTypeInfoDark] retain];
-	button.frame = CGRectMake(440, 8, 25.0, 25.0);
+	button.frame = CGRectMake(IS_WIDESCREEN? 528:440, 8, 25.0, 25.0);
 	button.backgroundColor = [UIColor clearColor];
 	[button addTarget:self action:@selector(showGraphSettings:) forControlEvents:UIControlEventTouchUpInside];
 
@@ -148,6 +148,10 @@
     secs = 2;
     
     DLog(@"MBeanAttributePlotController viewDidLoad");    
+}
+
+-(NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskLandscape;
 }
 
 #pragma mark - Request / Response

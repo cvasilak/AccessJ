@@ -22,8 +22,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self checkInternetReachability];
     
-    // Override point for customization after application launch.
-    [self.window addSubview:navController.view];
+    self.window.rootViewController = self.navController;
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -52,6 +52,21 @@
     DLog(@"applicationWillTerminate called");
     
     [reachability stopNotifier];
+}
+
+#pragma mark -
+#pragma mark Orientation Support
+// this method will ensure childs controllers  "supportedInterfaceOrientations" method
+// will be called (ios 6 only).
+- (NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window{
+    NSUInteger orientations = UIInterfaceOrientationMaskAll;
+    
+    if(self.window.rootViewController){
+        UIViewController *presentedViewController = [[(UINavigationController *)self.window.rootViewController viewControllers] lastObject];
+        orientations = [presentedViewController supportedInterfaceOrientations];
+    }
+    
+    return orientations;
 }
 
 #pragma mark -
