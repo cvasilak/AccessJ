@@ -58,7 +58,7 @@
 #pragma mark Orientation Support
 // this method will ensure childs controllers  "supportedInterfaceOrientations" method
 // will be called (ios 6 only).
-- (NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window{
+- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window{
     NSUInteger orientations = UIInterfaceOrientationMaskAll;
     
     if(self.window.rootViewController){

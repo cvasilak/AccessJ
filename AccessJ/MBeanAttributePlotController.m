@@ -150,7 +150,7 @@
     DLog(@"MBeanAttributePlotController viewDidLoad");    
 }
 
--(NSUInteger)supportedInterfaceOrientations {
+-(UIInterfaceOrientationMask)supportedInterfaceOrientations {
     return UIInterfaceOrientationMaskLandscape;
 }
 
@@ -224,7 +224,7 @@
 
 #pragma mark - Actions
 - (IBAction)showGraphSettings:(id)sender {
-	[self presentModalViewController:settingsController animated:YES];
+    [self presentViewController:settingsController animated:YES completion:nil];
 }
 
 #pragma mark - CraphSettingsController Delegate

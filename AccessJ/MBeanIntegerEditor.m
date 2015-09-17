@@ -36,7 +36,7 @@
         
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 210, 25)];
    		label.tag = kLabelTag;
-        label.textAlignment = UITextAlignmentCenter;
+        label.textAlignment = NSTextAlignmentCenter;
         
         UIFont *font = [UIFont boldSystemFontOfSize:18.0];
         label.textColor = kNonEditableTextColor;
@@ -49,7 +49,7 @@
                                      initWithFrame:CGRectMake(220, 10, 70, 25)];
         
         theTextField.adjustsFontSizeToFitWidth = YES;
-        theTextField.textAlignment = UITextAlignmentRight;
+        theTextField.textAlignment = NSTextAlignmentRight;
         theTextField.keyboardType = UIKeyboardTypeDecimalPad;
         
         theTextField.tag = kTextFieldTag;

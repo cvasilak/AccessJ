@@ -78,9 +78,7 @@
     [theSpinner release];
     
     UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] 
-                                     initWithTitle:NSLocalizedString(@"Back", 
-                                                                     @"Back - for button to cancel changes")
-                                     style:UIBarButtonSystemItemCancel
+                                     initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
                                      target:self
                                      action:@selector(cancel)];
     self.navigationItem.leftBarButtonItem = cancelButton;
@@ -300,7 +298,7 @@
         
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 100, 25)];
    		label.tag = kLabelTag;
-        label.textAlignment = UITextAlignmentRight;
+        label.textAlignment = NSTextAlignmentRight;
 
         UIFont *font = [UIFont boldSystemFontOfSize:14.0];
         label.textColor = kNonEditableTextColor;

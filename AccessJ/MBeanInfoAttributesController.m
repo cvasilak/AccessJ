@@ -373,8 +373,7 @@
                 
                 plotController.parentNavigationController = [self parentNavigationController];
                 
-                [parentNavigationController presentModalViewController:plotController animated:YES];
-                
+                [parentNavigationController presentViewController:plotController animated:YES completion:nil];
                 [plotController release];
             }
         }

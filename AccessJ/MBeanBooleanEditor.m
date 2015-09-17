@@ -33,7 +33,7 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 180, 25)];
-        label.textAlignment = UITextAlignmentCenter;
+        label.textAlignment = NSTextAlignmentCenter;
         label.tag = kLabelTag;
         UIFont *font = [UIFont boldSystemFontOfSize:18.0];
         label.textColor = kNonEditableTextColor;

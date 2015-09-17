@@ -36,9 +36,7 @@
 
 - (void)viewWillAppear:(BOOL)animated  {
     UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] 
-                                     initWithTitle:NSLocalizedString(@"Cancel", 
-                                                                     @"Cancel - for button to cancel changes")
-                                     style:UIBarButtonSystemItemCancel
+                                     initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
                                      target:self
                                      action:@selector(cancel)];
     self.navigationItem.leftBarButtonItem = cancelButton;
