@@ -11,8 +11,8 @@
 		6F0635D013BC824B00400B1F /* MBeanAttributeEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F0635CB13BC824A00400B1F /* MBeanAttributeEditor.m */; };
 		6F0635D113BC824B00400B1F /* MBeanStringEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F0635CD13BC824B00400B1F /* MBeanStringEditor.m */; };
 		6F0FD55D13D052B400D671F0 /* MBeanOperationExecController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F0FD55C13D052B300D671F0 /* MBeanOperationExecController.m */; };
+		6F11117B17135A070087A90A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F1111791713571A0087A90A /* Default-568h@2x.png */; };
 		6F1BB87B13FBD7D600B116A2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F1BB87A13FBD7D600B116A2 /* MapKit.framework */; };
-		6F1BB88413FBDCB500B116A2 /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F1BB88313FBDCB500B116A2 /* libz.1.2.3.dylib */; };
 		6F20EB5C1406AC66008C5701 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6F20EB5B1406AC66008C5701 /* README.md */; };
 		6F28987C13E17DFD00B4438D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F28987B13E17DFD00B4438D /* CoreGraphics.framework */; };
 		6F28987F13E17E7100B4438D /* MBeanAttributePlotController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F28987E13E17E7100B4438D /* MBeanAttributePlotController.m */; };
@@ -21,6 +21,7 @@
 		6F31E009140933C800CA7E14 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F5C7A2813FDBE2F002A1491 /* Default@2x.png */; };
 		6F31E00A140933CE00CA7E14 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F2E6AB513FF0D20004DD099 /* Default.png */; };
 		6F33D8B913E006FD00A440A4 /* MBeanOperationResponseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F33D8B813E006FD00A440A4 /* MBeanOperationResponseController.m */; };
+		6F4973DB1BA985DC00078DEE /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F4973DA1BA985DC00078DEE /* libz.tbd */; };
 		6F4D775613F1293300A5E69A /* GraphSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4D775413F1293300A5E69A /* GraphSettingsController.m */; };
 		6F4D775713F1293300A5E69A /* GraphSettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F4D775513F1293300A5E69A /* GraphSettingsView.xib */; };
 		6F69F38C13BA0AD10096B300 /* MBeanInfoRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F69F38713BA0AD10096B300 /* MBeanInfoRootController.m */; };
@@ -146,8 +147,8 @@
 		6F0635CD13BC824B00400B1F /* MBeanStringEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBeanStringEditor.m; sourceTree = "<group>"; };
 		6F0FD55B13D052B300D671F0 /* MBeanOperationExecController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBeanOperationExecController.h; sourceTree = "<group>"; };
 		6F0FD55C13D052B300D671F0 /* MBeanOperationExecController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBeanOperationExecController.m; sourceTree = "<group>"; };
+		6F1111791713571A0087A90A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		6F1BB87A13FBD7D600B116A2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		6F1BB88313FBDCB500B116A2 /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
 		6F20EB5B1406AC66008C5701 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		6F28987B13E17DFD00B4438D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6F28987D13E17E7100B4438D /* MBeanAttributePlotController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBeanAttributePlotController.h; sourceTree = "<group>"; };
@@ -155,6 +156,8 @@
 		6F2E6AB513FF0D20004DD099 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		6F33D8B713E006FD00A440A4 /* MBeanOperationResponseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBeanOperationResponseController.h; sourceTree = "<group>"; };
 		6F33D8B813E006FD00A440A4 /* MBeanOperationResponseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBeanOperationResponseController.m; sourceTree = "<group>"; };
+		6F4973D81BA985CF00078DEE /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
+		6F4973DA1BA985DC00078DEE /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		6F4D775313F1293300A5E69A /* GraphSettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphSettingsController.h; sourceTree = "<group>"; };
 		6F4D775413F1293300A5E69A /* GraphSettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphSettingsController.m; sourceTree = "<group>"; };
 		6F4D775513F1293300A5E69A /* GraphSettingsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GraphSettingsView.xib; sourceTree = "<group>"; };
@@ -385,7 +388,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F1BB88413FBDCB500B116A2 /* libz.1.2.3.dylib in Frameworks */,
+				6F4973DB1BA985DC00078DEE /* libz.tbd in Frameworks */,
 				6F1BB87B13FBD7D600B116A2 /* MapKit.framework in Frameworks */,
 				6F995EFC13E17B2300D0F726 /* QuartzCore.framework in Frameworks */,
 				6F28987C13E17DFD00B4438D /* CoreGraphics.framework in Frameworks */,
@@ -660,6 +663,7 @@
 				6F20EB5B1406AC66008C5701 /* README.md */,
 				6F2E6AB513FF0D20004DD099 /* Default.png */,
 				6F5C7A2813FDBE2F002A1491 /* Default@2x.png */,
+				6F1111791713571A0087A90A /* Default-568h@2x.png */,
 				6F90401E13FDB3460087611E /* accessj-114x114.png */,
 				6F90401C13FDB26B0087611E /* accessj-57x57.png */,
 				6FBA633413A7AB090043BE97 /* AccessJ */,
@@ -680,6 +684,8 @@
 		6FBA632D13A7AB090043BE97 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6F4973DA1BA985DC00078DEE /* libz.tbd */,
+				6F4973D81BA985CF00078DEE /* libz.1.2.5.tbd */,
 				6F995EFB13E17B2300D0F726 /* QuartzCore.framework */,
 				6F28987B13E17DFD00B4438D /* CoreGraphics.framework */,
 				6FBA632E13A7AB090043BE97 /* UIKit.framework */,
@@ -773,7 +779,6 @@
 				6FAEAA7A1406A06400AB47C1 /* TapkuLibrary */,
 				6FAEA9AF14069E6300AB47C1 /* ASIHTTPRequest */,
 				6F9CEE7214069A8B00872A85 /* SBJson */,
-				6F1BB88313FBDCB500B116A2 /* libz.1.2.3.dylib */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -817,6 +822,7 @@
 		6FBA632113A7AB080043BE97 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "forthnet S.A";
 			};
 			buildConfigurationList = 6FBA632413A7AB080043BE97 /* Build configuration list for PBXProject "AccessJ" */;
@@ -857,6 +863,7 @@
 				6F31E00414092FA000CA7E14 /* accessj-57x57.png in Resources */,
 				6F31E009140933C800CA7E14 /* Default@2x.png in Resources */,
 				6F31E00A140933CE00CA7E14 /* Default.png in Resources */,
+				6F11117B17135A070087A90A /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -995,18 +1002,78 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		6F00AE3A140A96A100A1D72C /* App Store Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = "App Store Distribution";
+		};
+		6F00AE3B140A96A100A1D72C /* App Store Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = (
+					armv6,
+					"$(ARCHS_STANDARD_32_BIT)",
+				);
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AccessJ/AccessJ-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "AccessJ/AccessJ-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				USER_HEADER_SEARCH_PATHS = "";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = "App Store Distribution";
+		};
 		6FBA634313A7AB090043BE97 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_LDFLAGS = (
@@ -1023,10 +1090,15 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
@@ -1043,10 +1115,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = (
+					armv6,
+					"$(ARCHS_STANDARD_32_BIT)",
+				);
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AccessJ/AccessJ-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "AccessJ/AccessJ-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
@@ -1064,9 +1141,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = (
+					armv6,
+					"$(ARCHS_STANDARD_32_BIT)",
+				);
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AccessJ/AccessJ-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "AccessJ/AccessJ-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
@@ -1089,6 +1171,7 @@
 			buildConfigurations = (
 				6FBA634313A7AB090043BE97 /* Debug */,
 				6FBA634413A7AB090043BE97 /* Release */,
+				6F00AE3A140A96A100A1D72C /* App Store Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1098,6 +1181,7 @@
 			buildConfigurations = (
 				6FBA634613A7AB090043BE97 /* Debug */,
 				6FBA634713A7AB090043BE97 /* Release */,
+				6F00AE3B140A96A100A1D72C /* App Store Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
