@@ -44,6 +44,7 @@
 
 - (void) loadView{
 	graph = [[TKGraphView alloc] initWithFrame:CGRectMake(0, 0, (IS_WIDESCREEN? 568: 480), 300)];
+    graph.backgroundColor = [UIColor whiteColor];
 	self.view = graph;
 }
 
@@ -71,7 +72,7 @@
 - (void) viewWillAppear:(BOOL)animated {
 	 [super viewWillAppear:animated];
 	 statusColor = [UIApplication sharedApplication].statusBarStyle;
-	 [UIApplication sharedApplication].statusBarStyle =  UIStatusBarStyleBlackOpaque;
+    [UIApplication sharedApplication].statusBarStyle =  UIStatusBarStyleLightContent;
  }
 - (void) viewWillDisappear:(BOOL)animated {
 	 [super viewWillDisappear:animated];
