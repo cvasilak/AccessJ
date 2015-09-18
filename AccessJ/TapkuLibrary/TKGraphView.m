@@ -463,8 +463,8 @@ static float highValue;
 	
 }
 
-- (void) showIndicatorForPoint:(int)point{
-	int i = point;
+- (void) showIndicatorForPoint:(NSInteger)point{
+	NSInteger i = point;
 	
 	if(i >= [data count])
 		i = [data count] - 1;
