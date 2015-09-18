@@ -208,7 +208,7 @@
 
     [self.graph showIndicatorForPoint:[dataForPlot count]-1];
 
-    DLog(@"%d", [dataForPlot count]);
+    DLog(@"%lu", (unsigned long)[dataForPlot count]);
     
     // TODO: update mbean attr
     //[[mbean.attr valueForKey:currentDisplayedAttributeName] setObject:theattrs forKey:@"value"];
@@ -231,7 +231,7 @@
 - (void)graphSettingsControllerDidFinish:(GraphSettingsController *)controller {
     secs = controller.updateIntervalSlider.value;
     
-	[self dismissModalViewControllerAnimated:YES];
+	[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

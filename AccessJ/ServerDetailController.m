@@ -85,7 +85,7 @@
 	static NSString *CellEditIdentifier = @"ServerCellEditIdentifer";
   	static NSString *CellEditSwitchIdentifier = @"ServerCellEditSwitchIdentifer";
     
-	NSUInteger row = [indexPath row];
+	NSInteger row = [indexPath row];
 	
     UITableViewCell *cell;
     
@@ -161,7 +161,7 @@
 	}
 	
 	label.text = [fieldLabels objectAtIndex:row];
-	NSNumber *rowAsNum = [[NSNumber alloc] initWithInt:row];
+    NSNumber *rowAsNum = [NSNumber numberWithInteger:row];
 	
 	switch (row) {
 		case kServerNameRowIndex:
@@ -242,7 +242,7 @@
 - (void)switchValueChanged: (id)sender {
     UISwitch *toggler = (UISwitch *) sender;
 
-	NSNumber *tagAsNum = [[NSNumber alloc] initWithInt:toggler.tag];
+    NSNumber *tagAsNum = [NSNumber numberWithInteger:toggler.tag];
 	[tempValues setObject:[NSNumber numberWithBool:toggler.on] forKey:tagAsNum];
 	[tagAsNum release];   
 }
@@ -253,7 +253,7 @@
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-	NSNumber *tagAsNum = [[NSNumber alloc] initWithInt:textField.tag];
+    NSNumber *tagAsNum = [NSNumber numberWithInteger:textField.tag];
 	[tempValues setObject:textField.text forKey:tagAsNum];
 	[tagAsNum release];
 }
@@ -286,7 +286,7 @@
 #pragma mark - Action Calls
 - (IBAction)save:(id)sender {
 	if (textFieldBeingEdited != nil) {
-		NSNumber *tagAsNum = [[NSNumber alloc] initWithInt:textFieldBeingEdited.tag];
+        NSNumber *tagAsNum = [NSNumber numberWithInteger:textFieldBeingEdited.tag];
 		[tempValues setObject:textFieldBeingEdited.text forKey:tagAsNum];
 		[tagAsNum release];
         

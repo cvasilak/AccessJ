@@ -99,6 +99,11 @@
 }
 
 #pragma mark - Actions
+-(IBAction)save {
+    // subclasses should implement
+   
+}
+
 -(IBAction)cancel {
     [self.navigationController popViewControllerAnimated:YES];
 }

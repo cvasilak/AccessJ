@@ -19,5 +19,6 @@
 
 -(IBAction)updateWithValue:(id)value;
 -(IBAction)cancel;
+-(IBAction)save;
 
 @end

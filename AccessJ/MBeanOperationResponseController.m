@@ -122,7 +122,7 @@
 
 #pragma mark - Table view delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSUInteger row = [indexPath row];
+    NSInteger row = [indexPath row];
 
     id rawValue = nil;
     NSString *title;
@@ -137,7 +137,7 @@
         
     } else if ([self.data isKindOfClass:[NSArray class]]) {
         rawValue = [self.data objectAtIndex:row];
-        title = [[NSNumber numberWithUnsignedInt:row] stringValue];
+        title = [[NSNumber numberWithUnsignedLong:row] stringValue];
     }
      
     if ([rawValue isKindOfClass:[NSDictionary class]] ||

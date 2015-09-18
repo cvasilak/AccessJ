@@ -108,7 +108,7 @@
     UITableViewCell *cell =	(UITableViewCell *)[[sender superview] superview];
     UITableView *table = (UITableView *)[cell superview];
     NSIndexPath *textFieldIndexPath = [table indexPathForCell:cell];
-    NSUInteger row = [textFieldIndexPath row];
+    NSInteger row = [textFieldIndexPath row];
 
     row++;
     if (row >= [params count]) {
@@ -127,8 +127,7 @@
 
 - (void)execute {
     if (textFieldBeingEdited != nil) {
-        NSNumber *tagAsNum= [[NSNumber alloc]
-                             initWithInt:textFieldBeingEdited.tag];
+        NSNumber *tagAsNum= [NSNumber numberWithInteger:textFieldBeingEdited.tag];
         [self setValue:textFieldBeingEdited.text forRow:tagAsNum];
         [tagAsNum release];
         
@@ -360,7 +359,7 @@
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     NSString *value = textField.text;
-    NSNumber *tagAsNum = [[NSNumber alloc] initWithInt:textField.tag];
+    NSNumber *tagAsNum = [NSNumber numberWithInteger:textField.tag];
 
     [self setValue:value forRow:tagAsNum];
     [tagAsNum release];

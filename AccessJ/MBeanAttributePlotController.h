@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TapkuLibrary.h"
+#import "TKGraphController.h"
 
 #import "GraphSettingsController.h"
 
