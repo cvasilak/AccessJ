@@ -53,6 +53,9 @@
 	self.view = contentView;
 	[contentView release];
     
+    // to avoid overlap of the tableview ontop of statusbar
+    self.navigationController.navigationBar.translucent = NO;
+    
     // Declare view controllers
 	MBeanInfoAttributesController *aController = [[MBeanInfoAttributesController alloc] initWithStyle:UITableViewStylePlain];
 	MBeanInfoOperationsController *oController = [[MBeanInfoOperationsController alloc] initWithStyle:UITableViewStylePlain];
@@ -213,19 +216,6 @@
     
     [alert show];
     [alert release];
-}
-
-#pragma mark TabBar Delegate Methods
-- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
-
-	/*
-	if ( [viewController isKindOfClass:DeploymentDetailsOperationsController.class]) {
-		self.navigationItem.rightBarButtonItem.enabled = NO;
-	} else {
-		self.navigationItem.rightBarButtonItem.enabled = YES;
-	}
-	 */
-
 }
 
 @end
