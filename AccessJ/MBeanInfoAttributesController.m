@@ -72,6 +72,9 @@
     
     [theSpinner release];
     
+    self.edgesForExtendedLayout = UIRectEdgeAll;
+    self.tableView.contentInset = UIEdgeInsetsMake(0.0f, 0.0f, CGRectGetHeight(self.tabBarController.tabBar.frame), 0.0f);
+    
 	DLog(@"MBeanInfoAttributesController viewDidLoad");
 }
 
