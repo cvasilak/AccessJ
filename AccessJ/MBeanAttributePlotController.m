@@ -115,8 +115,10 @@
 
     [controller release];
     
+    CGSize size = [UIScreen mainScreen].bounds.size;
+    
     UIButton * button = [[UIButton buttonWithType:UIButtonTypeInfoDark] retain];
-	button.frame = CGRectMake(IS_WIDESCREEN? 528:440, 8, 25.0, 25.0);
+	button.frame = CGRectMake(size.height - 30, 8, 25.0, 25.0);
 	button.backgroundColor = [UIColor clearColor];
 	[button addTarget:self action:@selector(showGraphSettings:) forControlEvents:UIControlEventTouchUpInside];
 

@@ -43,7 +43,9 @@
 
 
 - (void) loadView{
-	graph = [[TKGraphView alloc] initWithFrame:CGRectMake(0, 0, (IS_WIDESCREEN? 568: 480), 300)];
+    CGSize size = [UIScreen mainScreen].bounds.size;
+
+	graph = [[TKGraphView alloc] initWithFrame:CGRectMake(0, 0, size.height, size.width)];
     graph.backgroundColor = [UIColor whiteColor];
 	self.view = graph;
 }

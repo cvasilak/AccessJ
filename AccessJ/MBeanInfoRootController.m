@@ -78,13 +78,8 @@
 	atabBarController.delegate = self;
 
     // TODO: revisit this
-    UIInterfaceOrientation interfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
-    if((interfaceOrientation == UIInterfaceOrientationLandscapeLeft)||
-       (interfaceOrientation == UIInterfaceOrientationLandscapeRight)) {
-      	atabBarController.view.frame = CGRectMake(0, 0, 320, IS_WIDESCREEN? 568: 480);
-    } else if ((interfaceOrientation == UIInterfaceOrientationPortrait) || interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown) {
-        atabBarController.view.frame = CGRectMake(0, 0, 320, IS_WIDESCREEN? 550: 460);
-    }
+    CGRect rect = [[UIScreen mainScreen] applicationFrame];
+    atabBarController.view.frame = CGRectMake(0, 0, rect.size.width, rect.size.height);
     
 	// Set each tab to show an appropriate view controller
     [atabBarController setViewControllers: [NSArray arrayWithObjects:aController, oController, nil]];

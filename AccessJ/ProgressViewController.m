@@ -34,18 +34,10 @@
 
 - (void)adjustOrientation {
     // TODO: find a better way seems a hack
-    UIInterfaceOrientation interfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
-    
-    CGRect newFrame;
-    
-    if((interfaceOrientation == UIInterfaceOrientationLandscapeLeft)||
-       (interfaceOrientation == UIInterfaceOrientationLandscapeRight)) {
-       newFrame =  CGRectMake(0.0, 0.0, IS_WIDESCREEN? 550: 480, 320);
-    } else if ((interfaceOrientation == UIInterfaceOrientationPortrait) || interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown) {
-        newFrame = CGRectMake(0.0, 0.0, 320, IS_WIDESCREEN? 568: 480);
-    }
-    
+    CGRect newFrame = [[UIScreen mainScreen] applicationFrame];
+    newFrame =  CGRectMake(0.0, 0.0, newFrame.size.width, newFrame.size.height+20);
     [self.view setFrame:newFrame];
+    
     [self.view setNeedsDisplay];
 }
 

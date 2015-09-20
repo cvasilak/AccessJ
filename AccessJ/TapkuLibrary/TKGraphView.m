@@ -233,7 +233,7 @@ static float highValue;
 	
 	BOOL started = NO;
 	
-	CGContextMoveToPoint(context, POINT_DISTANCE, [self yCoordinate:[data objectAtIndex:0]]);
+	//CGContextMoveToPoint(context, POINT_DISTANCE, [self yCoordinate:[data objectAtIndex:0]]);
 	
 	for(int i = 0; i < [data count] ; i++){
 		NSObject <TKGraphViewPoint> *d = [data objectAtIndex:i];
@@ -417,18 +417,19 @@ static float highValue;
 }
 
 - (void) scrollToPoint:(NSInteger)point animated:(BOOL)animated{
-	
+    CGSize size = [UIScreen mainScreen].bounds.size;
+    
 	if(point<0 || point >= [data count]) return;
 	
 	
 	
 	float x = point * POINT_DISTANCE;
-	[scrollView setContentOffset:CGPointMake(x-(IS_WIDESCREEN? 568: 480)+POINT_DISTANCE*2, 0) animated:animated];
+	[scrollView setContentOffset:CGPointMake(x-size.width+POINT_DISTANCE*2, 0) animated:animated];
 	
 	
 	
 	CGRect r = goalLabel.frame;
-	r.origin.x = x-(IS_WIDESCREEN? 568.0: 480.0)+POINT_DISTANCE*2 + (IS_WIDESCREEN? 508.0: 480.0);
+	r.origin.x = x-size.width+POINT_DISTANCE*2 + size.width;
 	if(animated){
 		[UIView beginAnimations:NULL context:nil];
 		[UIView setAnimationDuration:.2];
@@ -586,14 +587,17 @@ static float highValue;
 
 
 - (void) drawBackground:(CGContextRef)context{
-	// GRAY BACKGROUND 
+	// GRAY BACKGROUND
+    CGSize size = [UIScreen mainScreen].bounds.size;
+    
 	CGContextSetRGBFillColor(context, 1, 1, 1, 1.0);
-	CGContextFillRect(context, CGRectMake(0, 0, (IS_WIDESCREEN? 568.0: 480.0), 300.0));
+	CGContextFillRect(context, CGRectMake(0, 0, size.width, 300.0));
 	CGContextSetRGBFillColor(context, 240.0/255.0, 240.0/255.0, 240.0/255.0, 0.4);
-	CGContextFillRect(context, CGRectMake(0, 0, (IS_WIDESCREEN? 568.0: 480.0), BOTTOM_LINE));
+	CGContextFillRect(context, CGRectMake(0, 0, size.width, BOTTOM_LINE));
 }
 - (void) drawBottomLine:(CGContextRef)context{
-	[UIView drawLineInRect:CGRectMake(0, BOTTOM_LINE+.5, (IS_WIDESCREEN? 568.0: 480.0), 0) red:0 green:0 blue:0 alpha:.4];
+    CGSize size = [UIScreen mainScreen].bounds.size;
+	[UIView drawLineInRect:CGRectMake(0, BOTTOM_LINE+.5, size.width, 0) red:0 green:0 blue:0 alpha:.4];
 }
 - (void) drawHorizontalLines:(CGContextRef)context{
 	
