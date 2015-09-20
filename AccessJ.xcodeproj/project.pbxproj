@@ -11,8 +11,6 @@
 		6F0635D013BC824B00400B1F /* MBeanAttributeEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F0635CB13BC824A00400B1F /* MBeanAttributeEditor.m */; };
 		6F0635D113BC824B00400B1F /* MBeanStringEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F0635CD13BC824B00400B1F /* MBeanStringEditor.m */; };
 		6F0ED3B81BAC6A4E0008ADA3 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F0ED3A51BAC6A4E0008ADA3 /* ASIAuthenticationDialog.m */; };
-		6F0ED3B91BAC6A4E0008ADA3 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F0ED3A81BAC6A4E0008ADA3 /* ASIDataCompressor.m */; };
-		6F0ED3BA1BAC6A4E0008ADA3 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F0ED3AA1BAC6A4E0008ADA3 /* ASIDataDecompressor.m */; };
 		6F0ED3BB1BAC6A4E0008ADA3 /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F0ED3AC1BAC6A4E0008ADA3 /* ASIDownloadCache.m */; };
 		6F0ED3BC1BAC6A4E0008ADA3 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F0ED3AE1BAC6A4E0008ADA3 /* ASIFormDataRequest.m */; };
 		6F0ED3BD1BAC6A4E0008ADA3 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F0ED3B01BAC6A4E0008ADA3 /* ASIHTTPRequest.m */; };
@@ -20,6 +18,7 @@
 		6F0ED3BF1BAC6A4E0008ADA3 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F0ED3B61BAC6A4E0008ADA3 /* ASINetworkQueue.m */; };
 		6F0FD55D13D052B400D671F0 /* MBeanOperationExecController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F0FD55C13D052B300D671F0 /* MBeanOperationExecController.m */; };
 		6F11117B17135A070087A90A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F1111791713571A0087A90A /* Default-568h@2x.png */; };
+		6F1377661BAF33D60055D314 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F4973D81BA985CF00078DEE /* libz.1.2.5.tbd */; };
 		6F1BB87B13FBD7D600B116A2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F1BB87A13FBD7D600B116A2 /* MapKit.framework */; };
 		6F20EB5C1406AC66008C5701 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6F20EB5B1406AC66008C5701 /* README.md */; };
 		6F28987C13E17DFD00B4438D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F28987B13E17DFD00B4438D /* CoreGraphics.framework */; };
@@ -32,13 +31,14 @@
 		6F31E009140933C800CA7E14 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F5C7A2813FDBE2F002A1491 /* Default@2x.png */; };
 		6F31E00A140933CE00CA7E14 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F2E6AB513FF0D20004DD099 /* Default.png */; };
 		6F33D8B913E006FD00A440A4 /* MBeanOperationResponseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F33D8B813E006FD00A440A4 /* MBeanOperationResponseController.m */; };
-		6F4973DB1BA985DC00078DEE /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F4973DA1BA985DC00078DEE /* libz.tbd */; };
 		6F4C234B1BAEC87D005E9029 /* accessj-120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F4C234A1BAEC87D005E9029 /* accessj-120x120.png */; };
 		6F4D775613F1293300A5E69A /* GraphSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4D775413F1293300A5E69A /* GraphSettingsController.m */; };
 		6F4D775713F1293300A5E69A /* GraphSettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F4D775513F1293300A5E69A /* GraphSettingsView.xib */; };
 		6F69F38C13BA0AD10096B300 /* MBeanInfoRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F69F38713BA0AD10096B300 /* MBeanInfoRootController.m */; };
 		6F69F38D13BA0AD10096B300 /* MBeanInfoOperationsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F69F38913BA0AD10096B300 /* MBeanInfoOperationsController.m */; };
 		6F69F38E13BA0AD10096B300 /* MBeanInfoAttributesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F69F38B13BA0AD10096B300 /* MBeanInfoAttributesController.m */; };
+		6F735FE21BAF366A00063CE2 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F735FDF1BAF366A00063CE2 /* ASIDataCompressor.m */; };
+		6F735FE31BAF366A00063CE2 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F735FE11BAF366A00063CE2 /* ASIDataDecompressor.m */; };
 		6F7CB8031406666A00592B50 /* mbean.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F7CB8021406666A00592B50 /* mbean.png */; };
 		6F7CB8051406686500592B50 /* folder.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F7CB8041406686500592B50 /* folder.png */; };
 		6F7CB809140672D000592B50 /* domain.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F7CB808140672D000592B50 /* domain.png */; };
@@ -103,10 +103,6 @@
 		6F0ED3A41BAC6A4E0008ADA3 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		6F0ED3A51BAC6A4E0008ADA3 /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
 		6F0ED3A61BAC6A4E0008ADA3 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
-		6F0ED3A71BAC6A4E0008ADA3 /* ASIDataCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDataCompressor.h; sourceTree = "<group>"; };
-		6F0ED3A81BAC6A4E0008ADA3 /* ASIDataCompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDataCompressor.m; sourceTree = "<group>"; };
-		6F0ED3A91BAC6A4E0008ADA3 /* ASIDataDecompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDataDecompressor.h; sourceTree = "<group>"; };
-		6F0ED3AA1BAC6A4E0008ADA3 /* ASIDataDecompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDataDecompressor.m; sourceTree = "<group>"; };
 		6F0ED3AB1BAC6A4E0008ADA3 /* ASIDownloadCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDownloadCache.h; sourceTree = "<group>"; };
 		6F0ED3AC1BAC6A4E0008ADA3 /* ASIDownloadCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDownloadCache.m; sourceTree = "<group>"; };
 		6F0ED3AD1BAC6A4E0008ADA3 /* ASIFormDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIFormDataRequest.h; sourceTree = "<group>"; };
@@ -150,6 +146,10 @@
 		6F69F38913BA0AD10096B300 /* MBeanInfoOperationsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBeanInfoOperationsController.m; sourceTree = "<group>"; };
 		6F69F38A13BA0AD10096B300 /* MBeanInfoAttributesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBeanInfoAttributesController.h; sourceTree = "<group>"; };
 		6F69F38B13BA0AD10096B300 /* MBeanInfoAttributesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBeanInfoAttributesController.m; sourceTree = "<group>"; };
+		6F735FDE1BAF366A00063CE2 /* ASIDataCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDataCompressor.h; sourceTree = "<group>"; };
+		6F735FDF1BAF366A00063CE2 /* ASIDataCompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDataCompressor.m; sourceTree = "<group>"; };
+		6F735FE01BAF366A00063CE2 /* ASIDataDecompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDataDecompressor.h; sourceTree = "<group>"; };
+		6F735FE11BAF366A00063CE2 /* ASIDataDecompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDataDecompressor.m; sourceTree = "<group>"; };
 		6F7CB8021406666A00592B50 /* mbean.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mbean.png; sourceTree = "<group>"; };
 		6F7CB8041406686500592B50 /* folder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = folder.png; sourceTree = "<group>"; };
 		6F7CB808140672D000592B50 /* domain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = domain.png; sourceTree = "<group>"; };
@@ -252,7 +252,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F4973DB1BA985DC00078DEE /* libz.tbd in Frameworks */,
+				6F1377661BAF33D60055D314 /* libz.1.2.5.tbd in Frameworks */,
 				6F1BB87B13FBD7D600B116A2 /* MapKit.framework in Frameworks */,
 				6F995EFC13E17B2300D0F726 /* QuartzCore.framework in Frameworks */,
 				6F28987C13E17DFD00B4438D /* CoreGraphics.framework in Frameworks */,
@@ -330,16 +330,16 @@
 				6F0ED3A41BAC6A4E0008ADA3 /* ASIAuthenticationDialog.h */,
 				6F0ED3A51BAC6A4E0008ADA3 /* ASIAuthenticationDialog.m */,
 				6F0ED3A61BAC6A4E0008ADA3 /* ASICacheDelegate.h */,
-				6F0ED3A71BAC6A4E0008ADA3 /* ASIDataCompressor.h */,
-				6F0ED3A81BAC6A4E0008ADA3 /* ASIDataCompressor.m */,
-				6F0ED3A91BAC6A4E0008ADA3 /* ASIDataDecompressor.h */,
-				6F0ED3AA1BAC6A4E0008ADA3 /* ASIDataDecompressor.m */,
 				6F0ED3AB1BAC6A4E0008ADA3 /* ASIDownloadCache.h */,
 				6F0ED3AC1BAC6A4E0008ADA3 /* ASIDownloadCache.m */,
 				6F0ED3AD1BAC6A4E0008ADA3 /* ASIFormDataRequest.h */,
 				6F0ED3AE1BAC6A4E0008ADA3 /* ASIFormDataRequest.m */,
 				6F0ED3AF1BAC6A4E0008ADA3 /* ASIHTTPRequest.h */,
 				6F0ED3B01BAC6A4E0008ADA3 /* ASIHTTPRequest.m */,
+				6F735FDE1BAF366A00063CE2 /* ASIDataCompressor.h */,
+				6F735FDF1BAF366A00063CE2 /* ASIDataCompressor.m */,
+				6F735FE01BAF366A00063CE2 /* ASIDataDecompressor.h */,
+				6F735FE11BAF366A00063CE2 /* ASIDataDecompressor.m */,
 				6F0ED3B11BAC6A4E0008ADA3 /* ASIHTTPRequestConfig.h */,
 				6F0ED3B21BAC6A4E0008ADA3 /* ASIHTTPRequestDelegate.h */,
 				6F0ED3B31BAC6A4E0008ADA3 /* ASIInputStream.h */,
@@ -656,9 +656,9 @@
 				6FBA633F13A7AB090043BE97 /* AccessJAppDelegate.m in Sources */,
 				6F2973B81BAC1C80000DDE77 /* UIView+TKCategory.m in Sources */,
 				6FBA634D13A7AC180043BE97 /* Server.m in Sources */,
-				6F0ED3BA1BAC6A4E0008ADA3 /* ASIDataDecompressor.m in Sources */,
 				6FBA635113A7AC5B0043BE97 /* ServersManager.m in Sources */,
 				6FBA635313A7AC700043BE97 /* ServersViewController.m in Sources */,
+				6F735FE21BAF366A00063CE2 /* ASIDataCompressor.m in Sources */,
 				6FBA635813A7AE2B0043BE97 /* ServerDetailController.m in Sources */,
 				6F80ADF813A8CDAA00B5B904 /* DomainsViewController.m in Sources */,
 				6F80ADFD13A8D03600B5B904 /* ProgressViewController.m in Sources */,
@@ -692,7 +692,6 @@
 				6F9CEE9414069A8B00872A85 /* SBJsonStreamWriterAccumulator.m in Sources */,
 				6F9CEE9514069A8B00872A85 /* SBJsonStreamWriterState.m in Sources */,
 				6F9CEE9614069A8B00872A85 /* SBJsonTokeniser.m in Sources */,
-				6F0ED3B91BAC6A4E0008ADA3 /* ASIDataCompressor.m in Sources */,
 				6F9CEE9714069A8B00872A85 /* SBJsonUTF8Stream.m in Sources */,
 				6F9CEE9814069A8B00872A85 /* SBJsonWriter.m in Sources */,
 				6FAEAB0B1406A06500AB47C1 /* TKGraphController.m in Sources */,
@@ -710,6 +709,7 @@
 				6F2973B51BAC1C19000DDE77 /* TKGlobal.m in Sources */,
 				6FAEAB2C1406A06500AB47C1 /* CSerializedJSONData.m in Sources */,
 				6FB136F21409462F0003234D /* Reachability.m in Sources */,
+				6F735FE31BAF366A00063CE2 /* ASIDataDecompressor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
