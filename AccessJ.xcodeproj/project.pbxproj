@@ -33,6 +33,7 @@
 		6F31E00A140933CE00CA7E14 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F2E6AB513FF0D20004DD099 /* Default.png */; };
 		6F33D8B913E006FD00A440A4 /* MBeanOperationResponseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F33D8B813E006FD00A440A4 /* MBeanOperationResponseController.m */; };
 		6F4973DB1BA985DC00078DEE /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F4973DA1BA985DC00078DEE /* libz.tbd */; };
+		6F4C234B1BAEC87D005E9029 /* accessj-120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F4C234A1BAEC87D005E9029 /* accessj-120x120.png */; };
 		6F4D775613F1293300A5E69A /* GraphSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4D775413F1293300A5E69A /* GraphSettingsController.m */; };
 		6F4D775713F1293300A5E69A /* GraphSettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F4D775513F1293300A5E69A /* GraphSettingsView.xib */; };
 		6F69F38C13BA0AD10096B300 /* MBeanInfoRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F69F38713BA0AD10096B300 /* MBeanInfoRootController.m */; };
@@ -88,7 +89,6 @@
 		6FBA639F13A7BAFF0043BE97 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FBA639E13A7BAFF0043BE97 /* CFNetwork.framework */; };
 		6FBA63A113A7BB0D0043BE97 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FBA63A013A7BB0D0043BE97 /* SystemConfiguration.framework */; };
 		6FBA63A313A7BB170043BE97 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FBA63A213A7BB170043BE97 /* MobileCoreServices.framework */; };
-		6FDAAACA13C35BFF00E17B00 /* AccessJ.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6FDAAAC913C35BFF00E17B00 /* AccessJ.txt */; };
 		6FF2DBEE13BA0D650036509E /* operations.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FF2DBEB13BA0D650036509E /* operations.png */; };
 		6FF2DBEF13BA0D650036509E /* summary.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FF2DBEC13BA0D650036509E /* summary.png */; };
 /* End PBXBuildFile section */
@@ -139,6 +139,7 @@
 		6F33D8B813E006FD00A440A4 /* MBeanOperationResponseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBeanOperationResponseController.m; sourceTree = "<group>"; };
 		6F4973D81BA985CF00078DEE /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
 		6F4973DA1BA985DC00078DEE /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		6F4C234A1BAEC87D005E9029 /* accessj-120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "accessj-120x120.png"; sourceTree = "<group>"; };
 		6F4D775313F1293300A5E69A /* GraphSettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphSettingsController.h; sourceTree = "<group>"; };
 		6F4D775413F1293300A5E69A /* GraphSettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphSettingsController.m; sourceTree = "<group>"; };
 		6F4D775513F1293300A5E69A /* GraphSettingsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GraphSettingsView.xib; sourceTree = "<group>"; };
@@ -242,7 +243,6 @@
 		6FBA639E13A7BAFF0043BE97 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		6FBA63A013A7BB0D0043BE97 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		6FBA63A213A7BB170043BE97 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		6FDAAAC913C35BFF00E17B00 /* AccessJ.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AccessJ.txt; sourceTree = "<group>"; };
 		6FF2DBEB13BA0D650036509E /* operations.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = operations.png; sourceTree = "<group>"; };
 		6FF2DBEC13BA0D650036509E /* summary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = summary.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -437,6 +437,7 @@
 				6F2E6AB513FF0D20004DD099 /* Default.png */,
 				6F5C7A2813FDBE2F002A1491 /* Default@2x.png */,
 				6F1111791713571A0087A90A /* Default-568h@2x.png */,
+				6F4C234A1BAEC87D005E9029 /* accessj-120x120.png */,
 				6F90401E13FDB3460087611E /* accessj-114x114.png */,
 				6F90401C13FDB26B0087611E /* accessj-57x57.png */,
 				6FBA633413A7AB090043BE97 /* AccessJ */,
@@ -474,7 +475,6 @@
 		6FBA633413A7AB090043BE97 /* AccessJ */ = {
 			isa = PBXGroup;
 			children = (
-				6FDAAAC913C35BFF00E17B00 /* AccessJ.txt */,
 				6F0635C013BC74B300400B1F /* Categories */,
 				6FBA635413A7AC960043BE97 /* Model */,
 				6FBA635513A7ACA50043BE97 /* Controllers */,
@@ -597,6 +597,11 @@
 			attributes = {
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "forthnet S.A";
+				TargetAttributes = {
+					6FBA632913A7AB090043BE97 = {
+						DevelopmentTeam = 4DPNWUE2RS;
+					};
+				};
 			};
 			buildConfigurationList = 6FBA632413A7AB080043BE97 /* Build configuration list for PBXProject "AccessJ" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -625,7 +630,7 @@
 				6F80AE0013A8D08700B5B904 /* ProgressView.xib in Resources */,
 				6FF2DBEE13BA0D650036509E /* operations.png in Resources */,
 				6FF2DBEF13BA0D650036509E /* summary.png in Resources */,
-				6FDAAACA13C35BFF00E17B00 /* AccessJ.txt in Resources */,
+				6F4C234B1BAEC87D005E9029 /* accessj-120x120.png in Resources */,
 				6F4D775713F1293300A5E69A /* GraphSettingsView.xib in Resources */,
 				6F7CB8031406666A00592B50 /* mbean.png in Resources */,
 				6F7CB8051406686500592B50 /* folder.png in Resources */,
@@ -768,7 +773,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AccessJ/AccessJ-Prefix.pch";
@@ -782,6 +788,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cvasilak.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				USER_HEADER_SEARCH_PATHS = "";
 				VALIDATE_PRODUCT = YES;
@@ -863,6 +870,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -877,6 +886,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cvasilak.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -886,6 +896,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AccessJ/AccessJ-Prefix.pch";
@@ -899,6 +911,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cvasilak.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
