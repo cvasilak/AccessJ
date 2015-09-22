@@ -18,7 +18,6 @@
 		6F0ED3BF1BAC6A4E0008ADA3 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F0ED3B61BAC6A4E0008ADA3 /* ASINetworkQueue.m */; };
 		6F0FD55D13D052B400D671F0 /* MBeanOperationExecController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F0FD55C13D052B300D671F0 /* MBeanOperationExecController.m */; };
 		6F11117B17135A070087A90A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F1111791713571A0087A90A /* Default-568h@2x.png */; };
-		6F1377661BAF33D60055D314 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F4973D81BA985CF00078DEE /* libz.1.2.5.tbd */; };
 		6F1BB87B13FBD7D600B116A2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F1BB87A13FBD7D600B116A2 /* MapKit.framework */; };
 		6F20EB5C1406AC66008C5701 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6F20EB5B1406AC66008C5701 /* README.md */; };
 		6F28987C13E17DFD00B4438D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F28987B13E17DFD00B4438D /* CoreGraphics.framework */; };
@@ -62,6 +61,7 @@
 		6F9CEE9614069A8B00872A85 /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F9CEE8814069A8B00872A85 /* SBJsonTokeniser.m */; };
 		6F9CEE9714069A8B00872A85 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F9CEE8A14069A8B00872A85 /* SBJsonUTF8Stream.m */; };
 		6F9CEE9814069A8B00872A85 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F9CEE8C14069A8B00872A85 /* SBJsonWriter.m */; };
+		6FA92F311BB1B9BB00E3CF7D /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F4973DA1BA985DC00078DEE /* libz.tbd */; };
 		6FAEAB0B1406A06500AB47C1 /* TKGraphController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FAEAAA01406A06400AB47C1 /* TKGraphController.m */; };
 		6FAEAB0C1406A06500AB47C1 /* TKGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FAEAAA21406A06400AB47C1 /* TKGraphView.m */; };
 		6FAEAB221406A06500AB47C1 /* TapkuLibrary.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6FAEAACD1406A06400AB47C1 /* TapkuLibrary.bundle */; };
@@ -252,7 +252,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F1377661BAF33D60055D314 /* libz.1.2.5.tbd in Frameworks */,
+				6FA92F311BB1B9BB00E3CF7D /* libz.tbd in Frameworks */,
 				6F1BB87B13FBD7D600B116A2 /* MapKit.framework in Frameworks */,
 				6F995EFC13E17B2300D0F726 /* QuartzCore.framework in Frameworks */,
 				6F28987C13E17DFD00B4438D /* CoreGraphics.framework in Frameworks */,
